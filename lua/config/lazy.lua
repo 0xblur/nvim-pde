@@ -18,7 +18,8 @@ require("lazy").setup {
     { import = "base" },
     { import = "pde" },
   },
-  defaults = { lazy = true, version = nil },
+  -- Plugins are all lazy and latest commit.
+  defaults = { lazy = true, version = false },
   install = { missing = true, colorscheme = { "tokyonight", "catppuccin" } },
   dev = { patterns = jit.os:find "Windows" and {} or { "alpha2phi" } },
   checker = { enabled = true },
