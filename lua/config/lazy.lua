@@ -20,9 +20,12 @@ require("lazy").setup {
   },
   -- Plugins are all lazy and latest commit.
   defaults = { lazy = true, version = false },
-  install = { missing = true, colorscheme = { "tokyonight", "catppuccin" } },
-  dev = { patterns = jit.os:find "Windows" and {} or { "alpha2phi" } },
+  -- Lazy will install plugins if missing.
+  install = { missing = true, colorscheme = { "tokyonight", "catppuccin", "gruvbox" } },
   checker = { enabled = true },
+  git = {
+    log = { "-10" }, -- Show the last 10 commits
+  },
   performance = {
     cache = {
       enabled = true,
