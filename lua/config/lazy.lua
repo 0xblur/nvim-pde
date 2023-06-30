@@ -23,6 +23,9 @@ require("lazy").setup {
   -- Lazy will install plugins if missing.
   install = { missing = true, colorscheme = { "tokyonight", "catppuccin", "gruvbox" } },
   checker = { enabled = true },
+  -- Generate lockfile after running an update. This allows you to restore to previous plugin versions
+  -- if anyone breaks after an update.
+  lockfile = vim.fn.stdpath "config" .. "/lazy-lock.json",
   git = {
     log = { "-10" }, -- Show the last 10 commits
   },
