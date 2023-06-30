@@ -1,14 +1,10 @@
 return {
-  -- Surround chunks of code with coding symbols or brackets
-  {
-    "kylechui/nvim-surround",
-    event = "VeryLazy",
-    opts = {},
-  },
+
+  -- Comment lines of code in visual mode with "gc" for linewise comments or "gb" for blockwise comments.
   {
     "numToStr/Comment.nvim",
     dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
-    keys = { { "gc", mode = { "n", "v" } }, { "gcc", mode = { "n", "v" } }, { "gbc", mode = { "n", "v" } } },
+    keys = { { "gc", mode = { "v" } }, { "gb", mode = { "v" } } },
     config = function(_, _)
       local opts = {
         ignore = "^$",
@@ -17,6 +13,7 @@ return {
       require("Comment").setup(opts)
     end,
   },
+  -- Extend % to keywords
   {
     "andymass/vim-matchup",
     event = { "BufReadPost" },

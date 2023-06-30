@@ -21,7 +21,7 @@ require("lazy").setup {
   -- Plugins are all lazy and latest commit.
   defaults = { lazy = true, version = false },
   -- Lazy will install plugins if missing.
-  install = { missing = true, colorscheme = { "tokyonight", "catppuccin", "gruvbox" } },
+  install = { missing = true, colorscheme = { "catppuccin", "gruvbox" } },
   checker = { enabled = true },
   -- Generate lockfile after running an update. This allows you to restore to previous plugin versions
   -- if anyone breaks after an update.

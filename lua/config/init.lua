@@ -1,13 +1,6 @@
----@type LazyVimConfig
 local M = {}
 
-M.lazy_version = ">=9.1.0"
-
----@class LazyVimConfig
 local defaults = {
-  -- colorscheme can be a string like `catppuccin` or a function that will load the colorscheme
-  ---@type string|fun()
-  colorscheme = "catppuccin-mocha",
   -- load the default settings
   defaults = {
     autocmds = true, -- lazyvim.config.autocmds
