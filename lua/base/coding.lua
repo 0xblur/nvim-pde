@@ -3,12 +3,12 @@ return {
   -- Comment lines of code in visual mode with "gc" for linewise comments or "gb" for blockwise comments.
   {
     "numToStr/Comment.nvim",
+    event = "VeryLazy",
     dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
-    keys = { { "gc", mode = { "v" } }, { "gb", mode = { "v" } } },
-    config = function(_, _)
+    config = function()
       local opts = {
-        ignore = "^$",
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+        ignore = "^$",                                                                              -- Ignore empty lines (regex).
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(), -- TypeScript support
       }
       require("Comment").setup(opts)
     end,
